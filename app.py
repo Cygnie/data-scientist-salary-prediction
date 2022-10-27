@@ -13,9 +13,9 @@ import datetime
 app = Flask(__name__)
 model = pickle.load(open('DS_salaries_Pipe.pkl', 'rb'))
 
-@app.route('/',methods=['GET'])
-def Home():
-    return render_template('index.html')
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 
 @app.route("/predict", methods=['POST'])
@@ -61,11 +61,11 @@ def predict():
         output = model.predict(prediction_DF)
 
         if output<0:
-            return render_template('index.html',prediction_texts="Sorry you cannot predict your salary")
+            return render_template('home.html',prediction_text="Sorry you cannot predict your salary")
         else:
-            return render_template('index.html',prediction_text="your estimated salary is {}".format(output))
+            return render_template('home.html',prediction_text="your estimated salary is {}".format(output[0]))
     else:
-        return render_template('index.html')
+        return render_template('home.html')
 
 if __name__=="__main__":
     app.run(debug=True)

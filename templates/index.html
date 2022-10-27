@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2> Data Scientist Job Salaries Prediction</h2>
+            
+            <h3>When did you start</h3>
+            <input id="first" name="Year" type="number ">
+            
+            <h3>Experience Level </h3><br>
+            <select name="experience_level" id="experience_level" required="required">
+                <option value="EN">Entry Level</option>
+                <option value="MI">Mid-level</option>
+                <option value="SE">Senior</option>
+                <option value="EX">Expert</option>
+                
+            </select>
+            
+            <h3>Employment Type</h3><br>
+            <select name="employment_type" id="employment_type" required="required">
+                <option value="PT">Part-time</option>
+                <option value="CT">Contract</option>
+                <option value="FL">Freelance</option>
+            </select>
+            
+            
+            <h3>Job Title</h3><br>
+            <select name="job_title" id="fuel" required="required">
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Data Engineer">Data Engineer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                <option value="Research Scientist">Research Scientist</option>
+                <option value="Data Science Manager">Data Science Manager</option>
+                <option value="Data Architect">Data Architect</option>
+                <option value="Big Data Engineer">Big Data Engineer</option>
+                <option value="Machine Learning Scientist">Machine Learning Scientist</option>
+                <option value="Principal Data Scientist">Principal Data Scientist</option>
+                <option value="AI Scientist">AI Scientist</option>
+                <option value="Data Analytics Manager">Data Analytics Manager</option>
+                <option value="Director of Data Science">Director of Data Science</option>
+                <option value="Data Science Consultant">Data Science Consultant</option>
+                <option value="ML Engineer">ML Engineer</option>
+                <option value="Computer Vision Engineer">Computer Vision Engineer</option>
+                <option value="Lead Data Engineer">Lead Data Engineer</option>
+                <option value="BI Data Analyst">BI Data Analyst</option>
+                <option value="Applied Data Scientist">Applied Data Scientist</option>
+                <option value="Data Engineering Manager">Data Engineering Manager</option>
+                <option value="Head of Data">Head of Data</option>
+                <option value="Business Data Analyst">Business Data Analyst</option>
+                <option value="Data Analytics Engineer">Data Analytics Engineer</option>
+                <option value="Applied Machine Learning Scientist">Applied Machine Learning Scientist</option>
+                <option value="Head of Data Science">Head of Data Science</option>
+                <option value="Analytics Engineer">Analytics Engineer</option>
+                <option value="Other">Other</option>
+                
+            </select>
+            
+            <h3>Employee Country </h3>
+            <h4>Employee's primary country of residence in during the work year as an ISO 3166 country code.(US, DE, etc.)</h4>
+            <input id="employee_residence" name="employee_residence" type="number ">
+
+
+           <h3>Remote Ratio</h3><br>
+            <select name="remote_ratio" id="remote_ratio" required="required">
+                <option value="office">in-Office</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="remote">Remote</option>
+            </select>
+            
+            <h3>Company Country </h3>
+            <h4>The country of the employer's main office or contracting branch as an ISO 3166 country code.(US, DE, etc.)</h4>
+            <input id="company_location" name="company_location" type="number ">
+            
+            
+            <h3>Company Size</h3><br>
+            <select name="company_size" id="company_size" required="required">
+                <option value="L">Large (+250)</option>
+                <option value="M">Medium (50 - 250)</option>
+                <option value="S">Small </option>
+            </select>
+            
+            
+            <br><br><button id="sub" type="submit ">Calculate the Predicted Salaries </button>
+            <br>
+
+        </form>
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+</body>
+
+</html>

@@ -25,7 +25,7 @@ def predict():
                                        'CA', 'NG', 'EE', 'CZ', 'BE', 'ES', 'AT', 'BR', 'DZ', 'IR', 'NL',
                                        'HU', 'PT', 'TR', 'JP', 'HN', 'MT', 'AE', 'LU', 'RO', 'SG', 'CH',
                                        'MY', 'MX', 'IT', 'HR', 'IL', 'DK', 'RU', 'CO', 'IQ', 'CN']
-        
+    
     Year = int(request.form['Year'])
     year = int(datetime.datetime.now().year) - Year
     

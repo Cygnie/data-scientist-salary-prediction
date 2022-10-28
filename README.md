@@ -1,45 +1,62 @@
-# data-scientist-salaries-prediction
+# Data Scientist Salary Prediction
 
+![image](https://media.istockphoto.com/vectors/data-analysis-concept-vector-banner-illustration-vector-id1321230055?k=20&m=1321230055&s=612x612&w=0&h=4FqbjHF64W7dvKhnpjOszHiAK50XatodvnHYjLoPeEg= )
 
-### Software And Tools Requirements
+### The main goal here is to estimate data scientist salaries based on the information provided.
+### You can also find the notebook version of this project on [the link](https://github.com/Cygnie/notebooks/tree/main/Data-Scientist-Salaries).
+
+# Software And Tools Requirements
 
 1. [Github Account](https://github.com)
 2. [HerokuAccount](https://heroku.com)
 3. [VSCodeIDE](https://code.visualstudio.com/)
 4. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
+5. [Docker](https://www.docker.com/)
 
-### Create a new environment
+
+# Dataset 
+
+* Download the dataset for custom training. You can also find more details about the dataset at this link.
+
+    * https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries
+
+# Installation
+
+* You can create a new environment for this project. If you want to make edits to the project and try new models, I recommend creating a new environment.
+
+## Create a new environment
 
 ```
 conda create -p venv python==3.7 -y
 ```
 
-## Dataset 
+## Download the required libraries
 
 ```
-https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries
+pip install -r requirements.txt
 ```
 
+## Run the demo
 
-* work_year:             The year the salary was paid.
-    
-* experience_level:      The experience level in the job during the year with the following possible values: EN Entry-level / Junior MI Mid-level / Intermediate SE Senior-level / Expert EX Executive-level / Director
-  
-* employment_type:       The type of employement for the role: PT Part-time FT Full-time CT Contract FL Freelance
+```
+python app.py
+```
 
-* job_title:             The role worked in during the year.
+# To Set up CI/CD pipeline in heroku we need 3 information
 
-* salary:                The total gross salary amount paid.
-    
-* salary_currency:       The currency of the salary paid as an ISO 4217 currency code.
-            
-* salary_in_usd:         The salary in USD (FX rate divided by avg. USD rate for the respective year via fxdata.foorilla.com).
-       
-* employee_residence:    Employee's primary country of residence in during the work year as an ISO 3166 country code.
-        
-* remote_ratio:          The overall amount of work done remotely, possible values are as follows: 0 No remote work (less than 20%) 50 Partially remote 100 Fully remote (more than 80%)
-          
-* company_location:      The country of the employer's main office or contracting branch as an ISO 3166 country code.
-        
-* company_size:          The average number of people that worked for the company during the year: S less than 50 employees (small) M 50 to 250 employees (medium) L more than 250 employees (large)
+1. Open your project repository and go to: Settings > Secrets > Actions
+2. Create a new Repository secret
+3. Define the specified names one by one and fill them with your own information.
 
+    * HEROKU_API_KEY
+    * HEROKU_APP_NAME
+    * HEROKU_EMAIL
+
+
+# I deployed this project with heroku. Enjoy it
+
+https://ds-job-salaries-prediction.herokuapp.com/
+
+
+# Author
+* [Furkan CEYRAN](https://github.com/Cygnie)
